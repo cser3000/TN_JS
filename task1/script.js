@@ -1,20 +1,16 @@
 
 let arr = [1, 2, 3, 4, 2, 1, 5, 6, 4, 5];
 
-function uniqueVelues (arr) {
-    let arrUniqueVelues = [];
+function uniqueValues (arr) {
+    let arrUniqueValues = new Set();
     for (let i = 0; i < arr.length; i++) {
-        if (!(arr[i] in arrUniqueVelues)) {
-            arrUniqueVelues.push(arr[i]);
-        }
+        arrUniqueValues.add(arr[i]);
     }
-    return arrUniqueVelues;
+    return arrUniqueValues;
 }
-
-let res;
 
 alert(arr);
 
-res = uniqueVelues(arr);
+for (let value of uniqueValues(arr)) alert(value);
 
-alert(res);
+
