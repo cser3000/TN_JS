@@ -8,13 +8,10 @@ const students = [
 ]
 
 function goodMarks (students) {
-    let goodStudents = [];
-    for (let i = 0; i < students.length; i++) {
-        if (+students[i].mark > 50) {
-            goodStudents.push(students[i].name + ' ');
-        }
-    }
-    return goodStudents;
+    let goodStud = students.filter( item => Number(item.mark) > 50);
+    let goodStudName = '';
+    for (let i = 0; i < goodStud.length; i++) goodStudName = goodStudName + goodStud[i].name + ', ';
+    return goodStudName;
 }
 
 alert(goodMarks(students));
